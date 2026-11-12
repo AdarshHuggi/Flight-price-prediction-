@@ -1,0 +1,6 @@
+__pycache__/
+.venv/
+*.py[cod]
+flight_price_model.joblib
+model_metrics.json
+.streamlit/secrets.toml

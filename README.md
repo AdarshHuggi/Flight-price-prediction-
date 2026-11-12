@@ -16,3 +16,17 @@ After collecting the data, you need to build a machine learning model. Before mo
 4. Model Building 
 5. Model Evaluation 
 6. Selecting the best model
+
+## Run the flight fare predictor
+
+The repository includes a cleaned 2021 fare snapshot with 7,699 rows. Train a new model and launch the local web interface with Python 3.8 or newer:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python train_model.py
+python -m streamlit run app.py
+```
+
+Streamlit prints the local URL (usually `http://localhost:8501`). The UI estimates a fare from airline, route, date, stops, and timing. Its evaluation panel reports holdout MAE, RMSE, and R². Because the source data is from 2021, treat predictions as an educational estimate rather than a live fare quote. The generated model and metrics are ignored by git and can be rebuilt with `train_model.py`.
